@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background-color: var(--background-primary-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: monospace; */
+    color: var(--text-primary-color);
+}
+
+main {
+    width: 100%;
+    padding: var(--gutter-2xl);
+}
+
+section {
+    width: 100%;
+    display: flex;
+    gap: var(--gutter-xl);
+}
+
+section .left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gutter-lg);
+}
+
+section .left .top {
+    display: flex;
+    gap: var(--gutter-lg);
+}
+
+section .left .top label {
+    border: var(--border-width-sm) solid var(--background-active-color);
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary-color);
+    font-size: var(--font-size-sm);
+    font-family: monospace;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+section .left .top #resetBtn {
+    background-color: var(--background-danger-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-sm) var(--padding-xl);
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary-color);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    gap: var(--gutter-sm);
+}
+
+section .left .top #downloadBtn {
+    background-color: var(--background-success-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-sm) var(--padding-xl);
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary-color);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    display: flex;
+    gap: var(--gutter-sm);
+    transition: all 0.3s ease-in-out;
+}
+
+section .left .top label,
+button:active {
+    transform: scale(0.95);
+}
+
+section .left .bottom {
+    width: 100%;
+    padding: var(--padding-lg);
+    background-color: var(--background-secondary-color);
+    aspect-ratio: 5/3;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .left .bottom .imgPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gutter-sm);
+}
+
+section .left .bottom .imgPlaceholder p {
+    color: var(--text-primary-color);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+section .left .bottom .imgPlaceholder i{
+    font-size: var(--font-size-2xl);
+    opacity: 0.5;
+}
+
+section .right{
+    width: 30%;
+    background-color: var(--background-secondary-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--padding-lg);
+}
+
+section .right .filters{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-lg);
+}
+
+section .right .filters .filter{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-sm);
+    font-size: var(--font-size-sm);
+    font-family: monospace;
+}
+
+section .right .filters .filter h4{
+    font-weight: 200;
+}
+
+section .right .filters .filter input{
+    width: 100%;
+    appearance: none;
+    height: 2px;
+    background-color: var(--background-active-color);
+    outline: none;
+    border: none;
+    cursor: grab;
+    transition: all 0.3s ease-in-out;
+}
+
+section .right .filters .filter input:active{
+    cursor: grabbing;
+}
