@@ -28,6 +28,47 @@ section {
     gap: var(--gutter-xl);
 }
 
+section .notification {
+    width: 50%;
+    top: 5%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    padding: var(--padding-md);
+    background-color: var(--background-danger-color);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .notification h2 {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    font-family: monospace;
+}
+
+@keyframes slider {
+    0% {
+        transform: translate(-50% , -150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50% , -50%);
+        opacity: 1;
+    }
+}
+
+.showSlider {
+    z-index: 1;
+    animation: slider 1s ease-in-out;
+}
+
+.hideSlider {
+    z-index: -1;
+    opacity: 0;
+}
+
 section .left {
     width: 70%;
     display: flex;
@@ -115,26 +156,36 @@ section .left .bottom .imgPlaceholder p {
     opacity: 0.5;
 }
 
-section .left .bottom .imgPlaceholder i{
+section .left .bottom .imgPlaceholder i {
     font-size: var(--font-size-2xl);
     opacity: 0.5;
 }
 
-section .right{
+section .right {
     width: 30%;
     background-color: var(--background-secondary-color);
     border-radius: var(--border-radius-lg);
-    padding: var(--padding-lg);
+    padding: var(--padding-md);
 }
 
-section .right .filters{
+section .right .filterHeading {
+    margin-bottom: var(--gutter-sm);
+}
+
+section .right .presetHeading {
+    margin-top: var(--gutter-lg);
+    margin-bottom: var(--gutter-sm);
+}
+
+
+section .right .filters {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-lg);
+    gap: var(--gutter-md);
 }
 
-section .right .filters .filter{
+section .right .filters .filter {
     display: flex;
     flex-direction: column;
     gap: var(--gutter-sm);
@@ -142,11 +193,11 @@ section .right .filters .filter{
     font-family: monospace;
 }
 
-section .right .filters .filter h4{
+section .right .filters .filter h4 {
     font-weight: 200;
 }
 
-section .right .filters .filter input{
+section .right .filters .filter input {
     width: 100%;
     appearance: none;
     height: 2px;
@@ -157,6 +208,36 @@ section .right .filters .filter input{
     transition: all 0.3s ease-in-out;
 }
 
-section .right .filters .filter input:active{
+section .right .filters .filter input:active {
     cursor: grabbing;
+}
+
+canvas {
+    display: none;
+    max-height: 74.5vh;
+    max-width: 90%;
+}
+
+section .right .presets {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-sm);
+}
+
+section .right .presets .preset-btn {
+    border: none;
+    outline: none;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--border-radius-md);
+    color: var(--background-primary-color);
+    font-size: var(--font-size-sm);
+    font-family: monospace;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+section .right .presets .preset-btn:hover {
+    background-color: var(--background-active-color);
 }
