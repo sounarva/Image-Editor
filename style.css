@@ -19,13 +19,13 @@ html {
 
 main {
     width: 100%;
-    padding: var(--gutter-2xl);
+    padding: var(--gutter-xl);
 }
 
 section {
     width: 100%;
     display: flex;
-    gap: var(--gutter-xl);
+    gap: var(--gutter-md);
 }
 
 section .notification {
@@ -33,7 +33,7 @@ section .notification {
     top: 5%;
     position: fixed;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     padding: var(--padding-md);
     background-color: var(--background-danger-color);
     border-radius: var(--border-radius-lg);
@@ -50,11 +50,12 @@ section .notification h2 {
 
 @keyframes slider {
     0% {
-        transform: translate(-50% , -150%);
+        transform: translate(-50%, -150%);
         opacity: 0;
     }
+
     100% {
-        transform: translate(-50% , -50%);
+        transform: translate(-50%, -50%);
         opacity: 1;
     }
 }
@@ -138,6 +139,7 @@ section .left .bottom {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 section .left .bottom .imgPlaceholder {
@@ -214,7 +216,7 @@ section .right .filters .filter input:active {
 
 canvas {
     display: none;
-    max-height: 74.5vh;
+    max-height: 80vh;
     max-width: 90%;
 }
 

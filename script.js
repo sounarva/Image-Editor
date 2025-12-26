@@ -207,6 +207,19 @@ function createFilters(id, min, max, value) {
     return filter
 }
 
+function warningNotification() {
+    if (file === null) {
+        notification.classList.add('showSlider')
+        notification.classList.remove('hideSlider')
+        setTimeout(() => {
+            notification.classList.remove('showSlider')
+            notification.classList.add('hideSlider')
+        }, 2000);
+        return true
+    }
+    return false
+}
+
 function filterAttr() {
     Object.keys(filters).forEach((filter) => {
         const filterElement = createFilters(filter, filters[filter].min, filters[filter].max, filters[filter].value)
@@ -310,6 +323,7 @@ resetBtn.addEventListener('click', () => {
 })
 
 downloadBtn.addEventListener('click', () => {
+    if (warningNotification()) return
     const link = document.createElement('a')
     link.download = 'edited-image.jpg'
     link.href = imageCanvas.toDataURL()
@@ -324,15 +338,8 @@ Object.keys(presets).forEach((preset) => {
     presetContainer.appendChild(presetBtn)
 
     presetBtn.addEventListener('click', (e) => {
-        if (file === null) {
-            notification.classList.add('showSlider')
-            notification.classList.remove('hideSlider')
-            setTimeout(() => {
-                notification.classList.remove('showSlider')
-                notification.classList.add('hideSlider')
-            }, 2000);
-            return
-        }
+        if (warningNotification()) return
+
         const preset = e.target.textContent
         Object.keys(presets[preset]).forEach((filter) => {
             filters[filter].value = presets[preset][filter]
